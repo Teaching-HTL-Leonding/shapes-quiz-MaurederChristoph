@@ -1,0 +1,249 @@
+﻿<Window x:Class="shapes_quiz_MaurederChristoph.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:shapes_quiz_MaurederChristoph"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="850" Width="1000" MinHeight="850" MinWidth="1000">
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="Black" 
+                    BorderThickness="1" 
+                    Margin="-2" 
+                    Grid.Row="0"/>
+            <Border BorderBrush="Black" 
+                    BorderThickness="1" 
+                    Margin="-2"
+                    Grid.Row="2"/>
+            <Border BorderBrush="Black" 
+                    BorderThickness="1" 
+                    Margin="-2" 
+                    Grid.Row="0"/>
+            <Border BorderBrush="Black" 
+                    BorderThickness="1" 
+                    Margin="-2" 
+                    Grid.Row="2"/>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" 
+                               FontSize="20" 
+                               Padding="10"> A:</TextBlock>
+                    <TextBlock x:Name="squareArea"
+                               Grid.Column="1" 
+                               FontSize="20" 
+                               Margin="5">0</TextBlock>
+                </Grid>
+
+                <TextBlock Grid.Row="0"
+                           FontSize="30" 
+                           Padding="5"> Rechteck:</TextBlock>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" 
+                               FontSize="20" 
+                               Padding="10"> a:</TextBlock>
+                    <TextBox x:Name="squareA" 
+                             Grid.Column="1" 
+                             FontSize="20"  
+                             Padding="5"  
+                             Margin="1" 
+                             TextChanged="SquareTextChanged" 
+                             PreviewTextInput="ValidateNumericInput"></TextBox>
+                </Grid>
+
+                <Grid Grid.Row="2" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0"
+                               FontSize="20" 
+                               Padding="10"> b:</TextBlock>
+                    <TextBox x:Name="squareB" 
+                             Grid.Column="1" 
+                             FontSize="20"  
+                             Padding="5" 
+                             Margin="1" 
+                             TextChanged="SquareTextChanged"
+                             PreviewTextInput="ValidateNumericInput"></TextBox>
+                </Grid>
+
+                <Button Grid.Row="4" 
+                        FontSize="25" 
+                        Margin="20" 
+                        Padding="5"
+                        Click="ButtonSquare">Add</Button>
+
+            </Grid >
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0"
+                           FontSize="30"
+                           Padding="5" > Dreieck:</TextBlock>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" 
+                               FontSize="20" 
+                               Padding="5" > a:</TextBlock>
+                    <TextBox x:Name="triangleA" 
+                             Grid.Column="1" 
+                             FontSize="20"  
+                             Padding="5"  
+                             Margin="1"
+                             TextChanged="TriangleTextChanged"
+                             PreviewTextInput="ValidateNumericInput"></TextBox>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" 
+                               FontSize="20"
+                               Padding="5"> h:</TextBlock>
+                    <TextBox x:Name="dreieckH" 
+                             Grid.Column="1" 
+                             FontSize="20" 
+                             Padding="5"  
+                             Margin="1"
+                             TextChanged="TriangleTextChanged"
+                             PreviewTextInput="ValidateNumericInput"></TextBox>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" 
+                               FontSize="20" 
+                               Padding="5" > A:</TextBlock>
+                    <TextBlock x:Name="triangleArea" 
+                               Grid.Column="1" 
+                               FontSize="20"  
+                               Padding="5"></TextBlock>
+                </Grid>
+
+                <Button Grid.Row="4" 
+                        FontSize="25" 
+                        Margin="20"  
+                        Padding="5"  
+                        Click="ButtonTriangle">Add</Button>
+            </Grid >
+
+            <Grid Grid.Row="2" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" 
+                           FontSize="30" 
+                           Padding="5"> Kreis:</TextBlock>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0"
+                               FontSize="20" 
+                               Padding="5"> r:</TextBlock>
+                    <TextBox x:Name="cireleR"
+                             Grid.Column="1" 
+                             FontSize="20" 
+                             Padding="5" 
+                             Margin="1"
+                             TextChanged="CircleTextChanged"
+                             PreviewTextInput="ValidateNumericInput"></TextBox>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0"
+                               FontSize="20" 
+                               Padding="5"> A:</TextBlock>
+                    <TextBlock x:Name="circleArea"
+                               Grid.Column="1"
+                               FontSize="20"
+                               Padding="5">0</TextBlock>
+                </Grid>
+
+                <Button Grid.Row="4" 
+                        FontSize="25" 
+                        Margin="20" 
+                        Padding="5"
+                        Click="ButtonCircle">Add</Button>
+            </Grid >
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
+            <ScrollViewer Grid.Row="0">
+                <ListBox x:Name="listBox">
+
+
+                </ListBox>
+            </ScrollViewer>
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal">
+                <TextBlock Grid.Row="1" 
+                           FontSize="40"
+                           Margin="10"> Summe:</TextBlock>
+                <TextBlock x:Name="sumField"
+                           Grid.Row="1" 
+                           FontSize="40"
+                           Margin="10"
+                           ></TextBlock>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
